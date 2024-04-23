@@ -1,3 +1,4 @@
+#+TITLE: Lab Journal
 * Introduction
 This is the lab journal for Physics Experiments 3, 2024.
 ** Personal Details
@@ -10,3 +11,21 @@ Session 1, 23rd of April, 2024
   - [[file:proposal/proposal.pdf][Proposal]]
   - [[file:proposal/tra.pdf][Task Risk Analysis]]
   - [[file:planning/planning.org][Planning]]
+- Based on received feedback, the task risk analysis and the proposal were amended.
+- Some time was spent on planning the coming sessions.
+- Building the setup:
+  - The following parts have been ordered:
+    - 9 Volt battery;
+    - Integrated Systems LSK189-TO-92-3L-BK JFETs (10 pc.);
+    - Linear Technology LT1023CN8PBF Op Amps (2 pc.);
+    - Resistors: 390 Ω, 39 kΩ, 10 MΩ, 100 of each;
+    - Capacitors: 150 pF (50 pc.);
+  - Two 1 μF capacitors (cylindrical, black Jackcon), a 100 nF (very small, light blue, marked "104k") and a 1.5 nF capacitor (flat, orange, marked "152") have been taken from the capacitor box;
+    - A slightly darker blue one was between the 100 nF capacitors, the barely legible marking "104k" confirms the light blue one is correct.
+  - Two 1 kΩ resistors were taken from the resistor box.
+  - A Rigol DS1052E is taken and will be used both to measure the output and as a ground.
+  - Part of the setup is constructed on the breadboard, to be continued tomorrow.
+- End of session. Plan for tomorrow:
+  - finish constructing the setup;
+  - measure output with input shorted and with resistor;
+  - analyse the output to determine whether the system work correctly and if so, is sufficiently good.
