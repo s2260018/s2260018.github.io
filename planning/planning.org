@@ -1,0 +1,35 @@
+- Session 1 [2024-04-23 Tue]:
+  - Planning;
+  - Improve TRA;
+  - Improve proposal;
+  - Begin constructing first version of setup;
+- Session 2 [2024-04-24 Wed]:
+  - Construct first version of setup;
+  - Test first version of setup;
+  - Make necessary modifications to setup;
+  - Measure background noise;
+  - Modify setup if background noise is too high;
+- Session 3 [2024-04-26 Fri]:
+  - If setup is working:
+    - measure background noise;
+    - measure $G(f)$;
+  - Else: improve setup;
+  - If time permits, measure some resistances;
+- Session 4 [2024-04-30 Tue]:
+  - Measure resistances;
+  - Analyse some data;
+  - Intervision (45 min.);
+  - Process feedback (15 min.);
+- Session 5 [2024-05-01 Wed]:
+  - If previous data indicates the setup is not working correctly, improve setup.
+  - Measure all available resistors;
+  - Analyse the data for all resistors;
+- Session 6 [2024-05-03 Fri]:
+  - Modify setup to allow changing temperature;
+  - Measure some resistors for different temperatures;
+  - Analyse the data, and determine if small temperature changes are sufficient;
+  - If needed, modify setup to allow more extreme temperature differences;
+  - Measure resistors for a range of temperatures;
+- Session 7 [2024-05-07 Tue]:
+  - Analyse temperature data, and if needed take more data;
+- Session 8 [2024-05-08 Wed]:
