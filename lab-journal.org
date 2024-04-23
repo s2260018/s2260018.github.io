@@ -1,0 +1,12 @@
+* Introduction
+This is the lab journal for Physics Experiments 3, 2024.
+** Personal Details
+- Name :: Luuk de Jong
+- Student number :: s2260018
+- Instructor :: Dr.ir. P.S.W.M. Logman 
+** Session 1
+Session 1, 23rd of April, 2024
+- Preparatory files:
+  - [[file:proposal/proposal.pdf][Proposal]]
+  - [[file:proposal/tra.pdf][Task Risk Analysis]]
+  - [[file:planning/planning.org][Planning]]
