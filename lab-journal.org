@@ -71,4 +71,4 @@ Session 2, 24th of april 2024
 
   - Measure some resistors;
 
-  - Modify the setup by using two 9 V batteries, to power the op amp with +9 V and -9 V instead of +9 V and 0 V.
+  - Modify the setup by using two 9 V batteries, to power the op amps with +9 V and -9 V instead of +9 V and 0 V.
