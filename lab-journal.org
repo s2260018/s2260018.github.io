@@ -6,7 +6,7 @@ This is the lab journal for Physics Experiments 3, 2024.
 - Student number :: s2260018
 - Instructor :: Dr.ir. P.S.W.M. Logman 
 * Session 1
-Session 1, 23rd of April, 2024
+Session 1, 23rd of April 2024
 - Preparatory files:
   - [[file:proposal/proposal.pdf][Proposal]]
   - [[file:proposal/tra.pdf][Task Risk Analysis]]
@@ -29,3 +29,46 @@ Session 1, 23rd of April, 2024
   - finish constructing the setup;
   - measure output with input shorted and with resistor;
   - analyse the output to determine whether the system work correctly and if so, is sufficiently good.
+* Session 2
+Session 2, 24th of april 2024
+- The rest of the circuit is constructed on the breadboard.
+  The ground is connected to the ground of the oscilloscope.
+  The output is connected to the oscilloscope input and the ground.
+  An image of the setup is shown in Figure [[fig:s2-breadboard]]
+
+  #+NAME: fig:s2-breadboard
+  #+CAPTION: A photograph of the breadboard with the setup, represented by Figure 1 in the [[file:proposal/proposal.pdf][proposal]].  The jumper cables in the top left and bottom left respectively connect to the positive and negative pole of the battery.  The cable on the bottom right connects to the oscilloscope ground.  The red cable on the right connects to the oscilloscope input.  The dark grey diagonal cable on the left shorts the input to the ground, and can be replaced with the resistor under test.
+  #+ATTR_HTML: :width 70%
+  [[file:images/20240424_144541_breadboard.jpg]]
+
+- Some measurements of the system were taken with the input shorted, like in Figure [[fig:s2-breadboard]], to measure the noise of the amplifier (and the surroundings).  There a substantial (~8 V) DC voltage present, which hinders measurements.  The oscilloscope can not measure finer than 500 mV per division before the DC offset becomes too great.  Some measurements were recorded at 500 mV/div and 1 ms, 1 μs and 50 ms, using =single_device.py=, and saved on disk with timestamp and resolution in the filename.
+
+- A solution to the DC problem was helpfully provided by the TAs: the channel on the oscilloscope was changed to AC coupling, as it was in DC coupling before.  The signal can now be measured at much greater voltage resolution.  The filenames of the previous data were updated to reflect that they were measured in DC mode.
+
+- Some measurements were taken with the input shorted, in AC coupling mode.  Initially, a ~50 Hz signal dominated the output (Figure [[fig:ac-interference-short]]), presumed to be AC power grid interference, based on its frequency.
+  After disconnecting and reconnecting the input short, this behaviour ceased (Figure [[fig:no-ac-interference]]).
+  The behaviour resumed when keeping the input disconnected (Figure [[fig:ac-interference-void]]).
+  This suggests it was a connection issue.
+ 
+  #+NAME: fig:ac-interference-short
+  #+CAPTION: $V(t)$ measured with the input shorted, with resolution 10 mV / div., 5 ms / div.  The frequence of the large oscillations is approximately 50 Hz, suggestion it is interference from the AC power grid.
+   #+ATTR_HTML: :width 70%
+  [[file:images/s2-160345-short-10mv-5ms-ac_v-t.png]]
+
+  #+NAME: fig:no-ac-interference
+  #+CAPTION: $V(t)$ measured with the input shorted, with resolution 10 mV / div., 5 ms / div.  The 50 Hz oscillations are gone, and remained gone with subsequent measurements.  $V_{\mathrm{RMS}} ≈ 2.3\text{ mV}$.
+  #+ATTR_HTML: :width 70%
+  [[file:images/s2-162029-short-5mv-5ms-ac_v-t.png]]
+
+  #+NAME: fig:ac-interference-void
+  #+CAPTION:  $V(t)$ measured with the input disconnected, with resolution 10 mV / div., 5 ms / div.  The oscillations are again approximately 50 Hz, like Figure [[fig:ac-interference-short]].  This persists with subsequente measurements.
+  #+ATTR_HTML: :width 70%
+  [[file:images/s2-163356-void-5mv-5ms-ac_v-t.png]]
+
+- End of session.  Plan for next session:
+
+  - Take some more shorted measurements for background noise determination;
+
+  - Measure some resistors;
+
+  - Modify the setup by using two 9 V batteries, to power the op amp with +9 V and -9 V instead of +9 V and 0 V.

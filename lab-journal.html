@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-04-23 Tue 17:07 -->
+<!-- 2024-04-24 Wed 16:59 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Lab Journal</title>
@@ -192,6 +192,27 @@
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { width: 90%; }
 </style>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
 <div id="content" class="content">
@@ -200,24 +221,25 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org4537c0b">1. Introduction</a>
+<li><a href="#orgcfaede0">1. Introduction</a>
 <ul>
-<li><a href="#orgf1f834b">1.1. Personal Details</a></li>
+<li><a href="#org0994fb3">1.1. Personal Details</a></li>
 </ul>
 </li>
-<li><a href="#orge855053">2. Session 1</a></li>
+<li><a href="#orgd4312a4">2. Session 1</a></li>
+<li><a href="#org7951e69">3. Session 2</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org4537c0b" class="outline-2">
-<h2 id="org4537c0b"><span class="section-number-2">1.</span> Introduction</h2>
+<div id="outline-container-orgcfaede0" class="outline-2">
+<h2 id="orgcfaede0"><span class="section-number-2">1.</span> Introduction</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 This is the lab journal for Physics Experiments 3, 2024.
 </p>
 </div>
-<div id="outline-container-orgf1f834b" class="outline-3">
-<h3 id="orgf1f834b"><span class="section-number-3">1.1.</span> Personal Details</h3>
+<div id="outline-container-org0994fb3" class="outline-3">
+<h3 id="org0994fb3"><span class="section-number-3">1.1.</span> Personal Details</h3>
 <div class="outline-text-3" id="text-1-1">
 <dl class="org-dl">
 <dt>Name</dt><dd>Luuk de Jong</dd>
@@ -227,11 +249,11 @@ This is the lab journal for Physics Experiments 3, 2024.
 </div>
 </div>
 </div>
-<div id="outline-container-orge855053" class="outline-2">
-<h2 id="orge855053"><span class="section-number-2">2.</span> Session 1</h2>
+<div id="outline-container-orgd4312a4" class="outline-2">
+<h2 id="orgd4312a4"><span class="section-number-2">2.</span> Session 1</h2>
 <div class="outline-text-2" id="text-2">
 <p>
-Session 1, 23rd of April, 2024
+Session 1, 23rd of April 2024
 </p>
 <ul class="org-ul">
 <li>Preparatory files:
@@ -269,9 +291,74 @@ Session 1, 23rd of April, 2024
 </ul>
 </div>
 </div>
+<div id="outline-container-org7951e69" class="outline-2">
+<h2 id="org7951e69"><span class="section-number-2">3.</span> Session 2</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Session 2, 24th of april 2024
+</p>
+<ul class="org-ul">
+<li><p>
+The rest of the circuit is constructed on the breadboard.
+The ground is connected to the ground of the oscilloscope.
+The output is connected to the oscilloscope input and the ground.
+An image of the setup is shown in Figure <a href="#orgde53fd4">1</a>
+</p>
+
+
+<div id="orgde53fd4" class="figure">
+<p><img src="images/20240424_144541_breadboard.jpg" alt="20240424_144541_breadboard.jpg" width="70%" />
+</p>
+<p><span class="figure-number">Figure 1: </span>A photograph of the breadboard with the setup, represented by Figure 1 in the <a href="proposal/proposal.pdf">proposal</a>.  The jumper cables in the top left and bottom left respectively connect to the positive and negative pole of the battery.  The cable on the bottom right connects to the oscilloscope ground.  The red cable on the right connects to the oscilloscope input.  The dark grey diagonal cable on the left shorts the input to the ground, and can be replaced with the resistor under test.</p>
+</div></li>
+
+<li>Some measurements of the system were taken with the input shorted, like in Figure <a href="#orgde53fd4">1</a>, to measure the noise of the amplifier (and the surroundings).  There a substantial (~8 V) DC voltage present, which hinders measurements.  The oscilloscope can not measure finer than 500 mV per division before the DC offset becomes too great.  Some measurements were recorded at 500 mV/div and 1 ms, 1 μs and 50 ms, using <code>single_device.py</code>, and saved on disk with timestamp and resolution in the filename.</li>
+
+<li>A solution to the DC problem was helpfully provided by the TAs: the channel on the oscilloscope was changed to AC coupling, as it was in DC coupling before.  The signal can now be measured at much greater voltage resolution.  The filenames of the previous data were updated to reflect that they were measured in DC mode.</li>
+
+<li><p>
+Some measurements were taken with the input shorted, in AC coupling mode.  Initially, a ~50 Hz signal dominated the output (Figure <a href="#org872e2cd">2</a>), presumed to be AC power grid interference, based on its frequency.
+After disconnecting and reconnecting the input short, this behaviour ceased (Figure <a href="#orgdad3366">3</a>).
+The behaviour resumed when keeping the input disconnected (Figure <a href="#org92bd124">4</a>).
+This suggests it was a connection issue.
+</p>
+
+
+<div id="org872e2cd" class="figure">
+<p><img src="images/s2-160345-short-10mv-5ms-ac_v-t.png" alt="s2-160345-short-10mv-5ms-ac_v-t.png" width="70%" />
+</p>
+<p><span class="figure-number">Figure 2: </span>\(V(t)\) measured with the input shorted, with resolution 10 mV / div., 5 ms / div.  The frequence of the large oscillations is approximately 50 Hz, suggestion it is interference from the AC power grid.</p>
+</div>
+
+
+<div id="orgdad3366" class="figure">
+<p><img src="images/s2-162029-short-5mv-5ms-ac_v-t.png" alt="s2-162029-short-5mv-5ms-ac_v-t.png" width="70%" />
+</p>
+<p><span class="figure-number">Figure 3: </span>\(V(t)\) measured with the input shorted, with resolution 10 mV / div., 5 ms / div.  The 50 Hz oscillations are gone, and remained gone with subsequent measurements.  \(V_{\mathrm{RMS}} ≈ 2.3\text{ mV}\).</p>
+</div>
+
+
+<div id="org92bd124" class="figure">
+<p><img src="images/s2-163356-void-5mv-5ms-ac_v-t.png" alt="s2-163356-void-5mv-5ms-ac_v-t.png" width="70%" />
+</p>
+<p><span class="figure-number">Figure 4: </span>\(V(t)\) measured with the input disconnected, with resolution 10 mV / div., 5 ms / div.  The oscillations are again approximately 50 Hz, like Figure <a href="#org872e2cd">2</a>.  This persists with subsequente measurements.</p>
+</div></li>
+
+<li>End of session.  Plan for next session:
+
+<ul class="org-ul">
+<li>Take some more shorted measurements for background noise determination;</li>
+
+<li>Measure some resistors;</li>
+
+<li>Modify the setup by using two 9 V batteries, to power the op amp with +9 V and -9 V instead of +9 V and 0 V.</li>
+</ul></li>
+</ul>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2024-04-23 Tue 17:07</p>
+<p class="date">Created: 2024-04-24 Wed 16:59</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
