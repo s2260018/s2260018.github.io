@@ -1,3 +1,4 @@
+#+OPTIONS: date:nil html-postamble:nil
 #+TITLE: Planning
 - Session 1 [2024-04-23 Tue]:
   - Planning;

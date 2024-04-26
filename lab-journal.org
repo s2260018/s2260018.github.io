@@ -1,3 +1,4 @@
+#+OPTIONS: num:nil
 #+TITLE: Lab Journal
 * Introduction
 This is the lab journal for Physics Experiments 3, 2024.
@@ -39,7 +40,7 @@ Session 2, 24th of april 2024
   #+NAME: fig:s2-breadboard
   #+CAPTION: A photograph of the breadboard with the setup, represented by Figure 1 in the [[file:proposal/proposal.pdf][proposal]].  The jumper cables in the top left and bottom left respectively connect to the positive and negative pole of the battery.  The cable on the bottom right connects to the oscilloscope ground.  The red cable on the right connects to the oscilloscope input.  The dark grey diagonal cable on the left shorts the input to the ground, and can be replaced with the resistor under test.
   #+ATTR_HTML: :width 70%
-  [[file:images/20240424_144541_breadboard.jpg]]
+  [[file:images/20240424_144541_breadboard.jpg][file:images/20240424_144541_breadboard_small.jpg]]
 
 - Some measurements of the system were taken with the input shorted, like in Figure [[fig:s2-breadboard]], to measure the noise of the amplifier (and the surroundings).  There a substantial (~8 V) DC voltage present, which hinders measurements.  The oscilloscope can not measure finer than 500 mV per division before the DC offset becomes too great.  Some measurements were recorded at 500 mV/div and 1 ms, 1 μs and 50 ms, using =single_device.py=, and saved on disk with timestamp and resolution in the filename.
 
