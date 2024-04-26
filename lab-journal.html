@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-04-26 Fri 12:34 -->
+<!-- 2024-04-26 Fri 17:05 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Lab Journal</title>
@@ -232,26 +232,27 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org28caa6d">Introduction</a>
+<li><a href="#orgbdf3d71">Introduction</a>
 <ul>
-<li><a href="#org086f5cd">Personal Details</a></li>
+<li><a href="#org5ba5ed5">Personal Details</a></li>
 </ul>
 </li>
-<li><a href="#orgc523a73">Session 1</a></li>
-<li><a href="#org429acd0">Session 2</a></li>
+<li><a href="#org0eb4c48">Session 1</a></li>
+<li><a href="#orga0429b7">Session 2</a></li>
+<li><a href="#orgb5736a5">Session 3</a></li>
 </ul>
 </div>
 </nav>
-<div id="outline-container-org28caa6d" class="outline-2">
-<h2 id="org28caa6d">Introduction</h2>
-<div class="outline-text-2" id="text-org28caa6d">
+<div id="outline-container-orgbdf3d71" class="outline-2">
+<h2 id="orgbdf3d71">Introduction</h2>
+<div class="outline-text-2" id="text-orgbdf3d71">
 <p>
 This is the lab journal for Physics Experiments 3, 2024.
 </p>
 </div>
-<div id="outline-container-org086f5cd" class="outline-3">
-<h3 id="org086f5cd">Personal Details</h3>
-<div class="outline-text-3" id="text-org086f5cd">
+<div id="outline-container-org5ba5ed5" class="outline-3">
+<h3 id="org5ba5ed5">Personal Details</h3>
+<div class="outline-text-3" id="text-org5ba5ed5">
 <dl class="org-dl">
 <dt>Name</dt><dd>Luuk de Jong</dd>
 <dt>Student number</dt><dd>s2260018</dd>
@@ -260,9 +261,9 @@ This is the lab journal for Physics Experiments 3, 2024.
 </div>
 </div>
 </div>
-<div id="outline-container-orgc523a73" class="outline-2">
-<h2 id="orgc523a73">Session 1</h2>
-<div class="outline-text-2" id="text-orgc523a73">
+<div id="outline-container-org0eb4c48" class="outline-2">
+<h2 id="org0eb4c48">Session 1</h2>
+<div class="outline-text-2" id="text-org0eb4c48">
 <p>
 Session 1, 23rd of April 2024
 </p>
@@ -302,9 +303,9 @@ Session 1, 23rd of April 2024
 </ul>
 </div>
 </div>
-<div id="outline-container-org429acd0" class="outline-2">
-<h2 id="org429acd0">Session 2</h2>
-<div class="outline-text-2" id="text-org429acd0">
+<div id="outline-container-orga0429b7" class="outline-2">
+<h2 id="orga0429b7">Session 2</h2>
+<div class="outline-text-2" id="text-orga0429b7">
 <p>
 Session 2, 24th of april 2024
 </p>
@@ -313,46 +314,46 @@ Session 2, 24th of april 2024
 The rest of the circuit is constructed on the breadboard.
 The ground is connected to the ground of the oscilloscope.
 The output is connected to the oscilloscope input and the ground.
-An image of the setup is shown in Figure <a href="#orga475577">1</a>
+An image of the setup is shown in Figure <a href="#orgdd6d1d5">1</a>
 </p>
 
 
-<figure id="orga475577">
+<figure id="orgdd6d1d5">
 <a href="images/20240424_144541_breadboard.jpg" width="70%"><img src="images/20240424_144541_breadboard_small.jpg" alt="20240424_144541_breadboard_small.jpg" width="70%"></a>
 
 <figcaption><span class="figure-number">Figure 1: </span>A photograph of the breadboard with the setup, represented by Figure 1 in the <a href="proposal/proposal.pdf">proposal</a>.  The jumper cables in the top left and bottom left respectively connect to the positive and negative pole of the battery.  The cable on the bottom right connects to the oscilloscope ground.  The red cable on the right connects to the oscilloscope input.  The dark grey diagonal cable on the left shorts the input to the ground, and can be replaced with the resistor under test.</figcaption>
 </figure></li>
 
-<li>Some measurements of the system were taken with the input shorted, like in Figure <a href="#orga475577">1</a>, to measure the noise of the amplifier (and the surroundings).  There a substantial (~8 V) DC voltage present, which hinders measurements.  The oscilloscope can not measure finer than 500 mV per division before the DC offset becomes too great.  Some measurements were recorded at 500 mV/div and 1 ms, 1 μs and 50 ms, using <code>single_device.py</code>, and saved on disk with timestamp and resolution in the filename.</li>
+<li>Some measurements of the system were taken with the input shorted, like in Figure <a href="#orgdd6d1d5">1</a>, to measure the noise of the amplifier (and the surroundings).  There a substantial (~8 V) DC voltage present, which hinders measurements.  The oscilloscope can not measure finer than 500 mV per division before the DC offset becomes too great.  Some measurements were recorded at 500 mV/div and 1 ms, 1 μs and 50 ms, using <code>single_device.py</code>, and saved on disk with timestamp and resolution in the filename.</li>
 
 <li>A solution to the DC problem was helpfully provided by the TAs: the channel on the oscilloscope was changed to AC coupling, as it was in DC coupling before.  The signal can now be measured at much greater voltage resolution.  The filenames of the previous data were updated to reflect that they were measured in DC mode.</li>
 
 <li><p>
-Some measurements were taken with the input shorted, in AC coupling mode.  Initially, a ~50 Hz signal dominated the output (Figure <a href="#org8598ef6">2</a>), presumed to be AC power grid interference, based on its frequency.
-After disconnecting and reconnecting the input short, this behaviour ceased (Figure <a href="#orgc13794d">3</a>).
-The behaviour resumed when keeping the input disconnected (Figure <a href="#org0593e1b">4</a>).
+Some measurements were taken with the input shorted, in AC coupling mode.  Initially, a ~50 Hz signal dominated the output (Figure <a href="#org0e8de86">2</a>), presumed to be AC power grid interference, based on its frequency.
+After disconnecting and reconnecting the input short, this behaviour ceased (Figure <a href="#org1910f71">3</a>).
+The behaviour resumed when keeping the input disconnected (Figure <a href="#org496cb7b">4</a>).
 This suggests it was a connection issue.
 </p>
 
 
-<figure id="org8598ef6">
+<figure id="org0e8de86">
 <img src="images/s2-160345-short-10mv-5ms-ac_v-t.png" alt="s2-160345-short-10mv-5ms-ac_v-t.png" width="70%">
 
 <figcaption><span class="figure-number">Figure 2: </span>\(V(t)\) measured with the input shorted, with resolution 10 mV / div., 5 ms / div.  The frequence of the large oscillations is approximately 50 Hz, suggestion it is interference from the AC power grid.</figcaption>
 </figure>
 
 
-<figure id="orgc13794d">
+<figure id="org1910f71">
 <img src="images/s2-162029-short-5mv-5ms-ac_v-t.png" alt="s2-162029-short-5mv-5ms-ac_v-t.png" width="70%">
 
 <figcaption><span class="figure-number">Figure 3: </span>\(V(t)\) measured with the input shorted, with resolution 10 mV / div., 5 ms / div.  The 50 Hz oscillations are gone, and remained gone with subsequent measurements.  \(V_{\mathrm{RMS}} ≈ 2.3\text{ mV}\).</figcaption>
 </figure>
 
 
-<figure id="org0593e1b">
+<figure id="org496cb7b">
 <img src="images/s2-163356-void-5mv-5ms-ac_v-t.png" alt="s2-163356-void-5mv-5ms-ac_v-t.png" width="70%">
 
-<figcaption><span class="figure-number">Figure 4: </span>\(V(t)\) measured with the input disconnected, with resolution 10 mV / div., 5 ms / div.  The oscillations are again approximately 50 Hz, like Figure <a href="#org8598ef6">2</a>.  This persists with subsequente measurements.</figcaption>
+<figcaption><span class="figure-number">Figure 4: </span>\(V(t)\) measured with the input disconnected, with resolution 10 mV / div., 5 ms / div.  The oscillations are again approximately 50 Hz, like Figure <a href="#org0e8de86">2</a>.  This persists with subsequente measurements.</figcaption>
 </figure></li>
 
 <li>End of session.  Plan for next session:
@@ -367,9 +368,89 @@ This suggests it was a connection issue.
 </ul>
 </div>
 </div>
+<div id="outline-container-orgb5736a5" class="outline-2">
+<h2 id="orgb5736a5">Session 3</h2>
+<div class="outline-text-2" id="text-orgb5736a5">
+<p>
+Session 3, 26th of april 2024
+</p>
+<ul class="org-ul">
+<li>The setup is connected and the signal is visually checked on the oscilloscope to check if everything is still connected properly.  Everything looks the same as last time.</li>
+<li>Some more data with the input shorted was recorded, with 10 ms / div. and 500 μs / div.</li>
+<li>Four measurements with 10 ms / div. and four with 500 μs / div. give respectively \(V_{RMS} \approx 1.29\ \pm\ 0.07\ \text{mV}\) and \(V_{RMS} \approx 1.52\ \pm\ 0.12\ \text{mV}\).  The error is the standard deviation.</li>
+<li>Several different resistors I have on hand are put under test, and several oscilloscope traces will be recorded for each, with the smallest voltage per division allowed without frequent clipping, and with both 10 ms and 500 us time settings.
+<dl class="org-dl">
+<dt>390 &Omega;</dt><dd>5 mV / div. can be used without clipping most of the time.
+Ten measurements have been taken with each setting.</dd>
+<dt>39 k&Omega;</dt><dd>The same settings and procedures are used.
+As a preliminary judgement, the noise looks no different than with 390 &Omega;.</dd>
+<dt>10 M&Omega;</dt><dd>The signal seems slightly noisier, judging by the \(V_{\mathrm{RMS}}\) readout, but the AC interference is now visible again (Figure <a href="#orgdc47819">5</a>), though to a lesser degree than with the input disconnected.</dd>
+</dl></li>
+<li><p>
+The calculated \(V_{\mathrm{RMS}}\) are recorded in table <a href="#org35ce8d3">1</a>.
+</p>
+<figure id="org1bf6284">
+<table id="org35ce8d3">
+<caption class="t-above"><span class="table-number">Table 1:</span> The calculated \(V_{\mathrm{RMS}}\) for each resistor with both time resolutions.  The error is obtained by taking the standard deviation of the ten calculated values.</caption>
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">\(R\text{ Ω}\)</th>
+<th scope="col" class="org-left">\(V_{\mathrm{RMS}}\ (\text{mV, }10\text{ ms})\)</th>
+<th scope="col" class="org-left">\(V_{\mathrm{RMS}}\ (\text{mV, }500\text{μs})\)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">390</td>
+<td class="org-left">1.37 ± 0.16</td>
+<td class="org-left">1.41 ± 0.12</td>
+</tr>
+
+<tr>
+<td class="org-left">39 k</td>
+<td class="org-left">1.28 ± 0.08</td>
+<td class="org-left">1.37 ± 0.10</td>
+</tr>
+
+<tr>
+<td class="org-left">10 M</td>
+<td class="org-left">1.61 ± 0.10</td>
+<td class="org-left">1.51 ± 0.10</td>
+</tr>
+</tbody>
+</table>
+</figure></li>
+</ul>
+
+
+<figure id="orgdc47819">
+<img src="images/s3-152841-10M-5mv-10ms-ac_v-t.png" alt="s3-152841-10M-5mv-10ms-ac_v-t.png" width="70%">
+
+<figcaption><span class="figure-number">Figure 5: </span>\(V(t)\) measured with a 10 MΩ resistor connected.  Like with the input disconnected, AC interference is visibly present.  The signal <i>is</i> distinct from a signal with no connection, so it is not likely a connection issue.</figcaption>
+</figure>
+<ul class="org-ul">
+<li>The noise is unexpectedly lower at 39 kΩ than at 390 Ω.  10 MΩ is higher, so it may be worth measuring some resistors in between.</li>
+<li>Before measuring more, last session's suggestion to use two batteries is implemented.  Two batteries are connected in series.  The positive pole is connected to the positive power rail.  The negative has been connected to the top-right negative power rail.  The other three negative power rails are still ground.</li>
+<li>End of session.  Plan for next session:
+<ul class="org-ul">
+<li>Redo some measurements with the changed setup;</li>
+<li>Investigate the possibility of using the myDAQ instead of the oscilloscope;</li>
+<li>Measure gain using function generator or myDAQ.</li>
+</ul></li>
+</ul>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2024-04-26 Fri 12:34</p>
+<p class="date">Created: 2024-04-26 Fri 17:05</p>
 </div>
 </body>
 </html>
