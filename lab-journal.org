@@ -29,9 +29,9 @@ Session 1, 23rd of April 2024
 - End of session. Plan for tomorrow:
   - finish constructing the setup;
   - measure output with input shorted and with resistor;
-  - analyse the output to determine whether the system work correctly and if so, is sufficiently good.
+  - analyse the output to determine whether the system works correctly and if so, is sufficiently good.
 * Session 2
-Session 2, 24th of april 2024
+Session 2, 24th of April 2024
 - The rest of the circuit is constructed on the breadboard.
   The ground is connected to the ground of the oscilloscope.
   The output is connected to the oscilloscope input and the ground.
@@ -52,7 +52,7 @@ Session 2, 24th of april 2024
   This suggests it was a connection issue.
  
   #+NAME: fig:ac-interference-short
-  #+CAPTION: $V(t)$ measured with the input shorted, with resolution 10 mV / div., 5 ms / div.  The frequence of the large oscillations is approximately 50 Hz, suggestion it is interference from the AC power grid.
+  #+CAPTION: $V(t)$ measured with the input shorted, with resolution 10 mV / div., 5 ms / div.  The frequency of the large oscillations is approximately 50 Hz, suggestion it is interference from the AC power grid.
    #+ATTR_HTML: :width 70%
   [[file:images/s2-160345-short-10mv-5ms-ac_v-t.png]]
 
@@ -62,7 +62,7 @@ Session 2, 24th of april 2024
   [[file:images/s2-162029-short-5mv-5ms-ac_v-t.png]]
 
   #+NAME: fig:ac-interference-void
-  #+CAPTION:  $V(t)$ measured with the input disconnected, with resolution 10 mV / div., 5 ms / div.  The oscillations are again approximately 50 Hz, like Figure [[fig:ac-interference-short]].  This persists with subsequente measurements.
+  #+CAPTION:  $V(t)$ measured with the input disconnected, with resolution 10 mV / div., 5 ms / div.  The oscillations are again approximately 50 Hz, like Figure [[fig:ac-interference-short]].  This persists with subsequent measurements.
   #+ATTR_HTML: :width 70%
   [[file:images/s2-163356-void-5mv-5ms-ac_v-t.png]]
 
@@ -74,7 +74,7 @@ Session 2, 24th of april 2024
 
   - Modify the setup by using two 9 V batteries, to power the op amps with +9 V and -9 V instead of +9 V and 0 V.
 * Session 3
-Session 3, 26th of april 2024
+Session 3, 26th of April 2024
 - The setup is connected and the signal is visually checked on the oscilloscope to check if everything is still connected properly.  Everything looks the same as last time.
 - Some more data with the input shorted was recorded, with 10 ms / div. and 500 μs / div.
 - Four measurements with 10 ms / div. and four with 500 μs / div. give respectively $V_{RMS} \approx 1.29\ \pm\ 0.07\ \text{mV}$ and $V_{RMS} \approx 1.52\ \pm\ 0.12\ \text{mV}$.  The error is the standard deviation.
@@ -108,9 +108,9 @@ Session 3, 26th of april 2024
   - Investigate the possibility of using the myDAQ instead of the oscilloscope;
   - Measure gain using function generator or myDAQ.
 * Session 4
-Session 4, 30th of april 2024
+Session 4, 30th of April 2024
 - The setup has been connected to a NI myDAQ with TOO interface.  The input, which was previously connected to the oscilloscope, is now connected to AI1.  The ground is now connected to AGND.
-- The resistors are measured again using the myDAQ, controlled by Python.  The resistor will be measured for 100,000 samples with 100,000 samples per second, after which the standard deviation is used to determine the noise $V_{\mathrm{RMS}}$.  This process is repeated ten times per resistor.  The obtained values for $V_{\mathrm{RMS}}$ are averaged to obtain the final value, and the standard deviation is taken to see how an uncertainty due to fluctuation over time.  The results are shown in Table [[tab:s4-resistor-noise]].  Like before, the 10 MΩ resistor shows AC interference, sown in Figure [[fig:ac-interference-10M-mydaq]].
+- The resistors are measured again using the myDAQ, controlled by Python.  The resistor will be measured for 100,000 samples with 100,000 samples per second, after which the standard deviation is used to determine the noise $V_{\mathrm{RMS}}$.  This process is repeated ten times per resistor.  The obtained values for $V_{\mathrm{RMS}}$ are averaged to obtain the final value, and the standard deviation is taken to see how an uncertainty due to fluctuation over time.  The results are shown in Table [[tab:s4-resistor-noise]].  Like before, the 10 MΩ resistor shows AC interference, shown in Figure [[fig:ac-interference-10M-mydaq]].
 
   #+begin_figure
   #+NAME: tab:s4-resistor-noise
@@ -126,7 +126,7 @@ Session 4, 30th of april 2024
 
   #+NAME: fig:ac-interference-10M-mydaq
   #+ATTR_HTML: :width 70%
-  #+CAPTION: Strong AC intererence in a $V(t)$ measurement of a 10 MΩ resistor taken with the myDAQ.
+  #+CAPTION: Strong AC interference in a $V(t)$ measurement of a 10 MΩ resistor taken with the myDAQ.
   [[file:images/mydaq_10M-t.png]]
 - While not visible, AC interference is strongly present with the lower resistances as well, see Figure [[fig:ac-interference-fft]].
 
@@ -148,7 +148,7 @@ Session 4, 30th of april 2024
 | 10M             | 0.401 ± 0.002                   |
   #+end_figure
 * Session 5
-Session 4, 1st of march 2024
+Session 5, 1st of March 2024
 - To determine the transfer function of the system, the input is connected to the myDAQ's AO0.  The output is connected to AI0, and AO0 is also directly connected to AI1.  The myDAQ now sends a series of sinusoidal signals, ranging from 1 to 50,000 Hz, with an amplitude of 0.1 V, 100,000 samples per measurement, and 10 periods per signal.
 
   By comparing the amplitude of the system output and the input at each frequency, the transfer function can be obtained, which is shown in Figure [[fig:s5-rubbish-transfer]].  Figure [[fig:s5-rubbish-io]] shows one the input and output of one of the measurements.  The output is much smaller than the input, which indicates something is wrong.  This phenomenon appeared in many of the measured signals.
@@ -178,14 +178,14 @@ Session 4, 1st of march 2024
 
   #+NAME: fig:s5-good-io-oscilloscope
   #+ATTR_HTML: :width 70%
-  #+CAPTION: An oscilloscope trace of the input and output signal of the fixed system, driven using frequency 1 kHZ, amplitude 4 mV with the function generator.  Note the different scales: the input signal has an amplitude of around 4 mV, as set on the function generator, but the output has an amplitude of approximately 10 V.
+  #+CAPTION: An oscilloscope trace of the input and output signal of the fixed system, driven using frequency 1 kHz, amplitude 4 mV with the function generator.  Note the different scales: the input signal has an amplitude of around 4 mV, as set on the function generator, but the output has an amplitude of approximately 10 V.
   [[file:images/s5-good-io-oscilloscope.svg]]
 
-- The connection of the battery to the ground is very sensitive.  It often seems to not connect properly, giving a very noise, useless signal.  Reconnecting or slightly bending the input until it works again fixes the issue.  At one point, the gain notably increased, cliping the output signal.  This could not be reproduced.
+- The connection of the battery to the ground is very sensitive.  It often seems to not connect properly, giving a very noise, useless signal.  Reconnecting or slightly bending the input until it works again fixes the issue.  At one point, the gain notably increased, clipping the output signal.  This could not be reproduced.
 
 - The setup is moved over on the desk, as to make more efficient use of the space available.  This required disconnecting and reconnecting parts of the setup.  The setup has been connected to the oscilloscope to verify that it is connected properly.  After fiddling a bit with the battery ground connector and the +9 V jumper cable, the setup works again.  Interestingly, the gain seems to have increased.  A 4 mV, 1 kHz sine like before now produces a heavily malformed output.  Increasing or decreasing the frequency enough to end up in the lower gain region leads to a clean sine output again.
 
-- The signal generator only goes down to 4 mV, but the myDAQ can go lower.  At 1 mV, 1 kHz, the myDAQ can measure a recognisable signal, shown in Figure [[fig:s5-good-io-mydaq]].  Figure [[fig:s5-good-io-mydaq-fft]] shows the FFT of the signal, showing a clearly identifiable peak at he right frequency.
+- The signal generator only goes down to 4 mV, but the myDAQ can go lower.  At 1 mV, 1 kHz, the myDAQ can measure a recognisable signal, shown in Figure [[fig:s5-good-io-mydaq]].  Figure [[fig:s5-good-io-mydaq-fft]] shows the FFT of the output signal, showing a clearly identifiable peak at he right frequency.
 
   #+NAME: fig:s5-good-io-mydaq
   #+CAPTION: Input and output signals measured with the myDAQ of the system driven by a 1 kHz, 1 mV signal from the myDAQ.  The signals look messy and not quite centred at 0 V, but are still recognisable.
@@ -193,6 +193,6 @@ Session 4, 1st of march 2024
   [[file:images/s5-powered-mydaq-1kHz-1mV.svg]]
 
   #+NAME: fig:s5-good-io-mydaq-fft
-  #+CAPTION: The FFT of the signal show in Figure [[fig:s5-good-io-mydaq]].  A clear peak is visible at 1000 Hz, which is the frequency with which the system is driven.
+  #+CAPTION: The FFT of the output signal shown in Figure [[fig:s5-good-io-mydaq]].  A clear peak is visible at 1000 Hz, which is the frequency with which the system is driven.
   #+ATTR_HTML: :width 70%
   [[file:images/s5-powered-mydaq-1kHz-1mV-fft.svg]]

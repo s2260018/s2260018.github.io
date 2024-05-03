@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2024-05-03 Fri 11:33 -->
+<!-- 2024-05-03 Fri 11:37 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Lab Journal</title>
@@ -232,29 +232,29 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orga2dd9ca">Introduction</a>
+<li><a href="#orgf2e5698">Introduction</a>
 <ul>
-<li><a href="#orga2f39f0">Personal Details</a></li>
+<li><a href="#orgc5562bb">Personal Details</a></li>
 </ul>
 </li>
-<li><a href="#org547d754">Session 1</a></li>
-<li><a href="#org21e6747">Session 2</a></li>
-<li><a href="#org66a0a3d">Session 3</a></li>
-<li><a href="#org08aa4d4">Session 4</a></li>
-<li><a href="#org46a1c25">Session 5</a></li>
+<li><a href="#org7511631">Session 1</a></li>
+<li><a href="#org18636c6">Session 2</a></li>
+<li><a href="#org50cbcab">Session 3</a></li>
+<li><a href="#orgfcff8c0">Session 4</a></li>
+<li><a href="#orgcf3fc10">Session 5</a></li>
 </ul>
 </div>
 </nav>
-<div id="outline-container-orga2dd9ca" class="outline-2">
-<h2 id="orga2dd9ca">Introduction</h2>
-<div class="outline-text-2" id="text-orga2dd9ca">
+<div id="outline-container-orgf2e5698" class="outline-2">
+<h2 id="orgf2e5698">Introduction</h2>
+<div class="outline-text-2" id="text-orgf2e5698">
 <p>
 This is the lab journal for Physics Experiments 3, 2024.
 </p>
 </div>
-<div id="outline-container-orga2f39f0" class="outline-3">
-<h3 id="orga2f39f0">Personal Details</h3>
-<div class="outline-text-3" id="text-orga2f39f0">
+<div id="outline-container-orgc5562bb" class="outline-3">
+<h3 id="orgc5562bb">Personal Details</h3>
+<div class="outline-text-3" id="text-orgc5562bb">
 <dl class="org-dl">
 <dt>Name</dt><dd>Luuk de Jong</dd>
 <dt>Student number</dt><dd>s2260018</dd>
@@ -263,9 +263,9 @@ This is the lab journal for Physics Experiments 3, 2024.
 </div>
 </div>
 </div>
-<div id="outline-container-org547d754" class="outline-2">
-<h2 id="org547d754">Session 1</h2>
-<div class="outline-text-2" id="text-org547d754">
+<div id="outline-container-org7511631" class="outline-2">
+<h2 id="org7511631">Session 1</h2>
+<div class="outline-text-2" id="text-org7511631">
 <p>
 Session 1, 23rd of April 2024
 </p>
@@ -300,62 +300,62 @@ Session 1, 23rd of April 2024
 <ul class="org-ul">
 <li>finish constructing the setup;</li>
 <li>measure output with input shorted and with resistor;</li>
-<li>analyse the output to determine whether the system work correctly and if so, is sufficiently good.</li>
+<li>analyse the output to determine whether the system works correctly and if so, is sufficiently good.</li>
 </ul></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org21e6747" class="outline-2">
-<h2 id="org21e6747">Session 2</h2>
-<div class="outline-text-2" id="text-org21e6747">
+<div id="outline-container-org18636c6" class="outline-2">
+<h2 id="org18636c6">Session 2</h2>
+<div class="outline-text-2" id="text-org18636c6">
 <p>
-Session 2, 24th of april 2024
+Session 2, 24th of April 2024
 </p>
 <ul class="org-ul">
 <li><p>
 The rest of the circuit is constructed on the breadboard.
 The ground is connected to the ground of the oscilloscope.
 The output is connected to the oscilloscope input and the ground.
-An image of the setup is shown in Figure <a href="#orgd21e049">1</a>
+An image of the setup is shown in Figure <a href="#org6f42787">1</a>
 </p>
 
 
-<figure id="orgd21e049">
+<figure id="org6f42787">
 <a href="images/20240424_144541_breadboard.jpg" width="70%"><img src="images/20240424_144541_breadboard_small.jpg" alt="20240424_144541_breadboard_small.jpg" width="70%"></a>
 
 <figcaption><span class="figure-number">Figure 1: </span>A photograph of the breadboard with the setup, represented by Figure 1 in the <a href="proposal/proposal.pdf">proposal</a>.  The jumper cables in the top left and bottom left respectively connect to the positive and negative pole of the battery.  The cable on the bottom right connects to the oscilloscope ground.  The red cable on the right connects to the oscilloscope input.  The dark grey diagonal cable on the left shorts the input to the ground, and can be replaced with the resistor under test.</figcaption>
 </figure></li>
 
-<li>Some measurements of the system were taken with the input shorted, like in Figure <a href="#orgd21e049">1</a>, to measure the noise of the amplifier (and the surroundings).  There a substantial (~8 V) DC voltage present, which hinders measurements.  The oscilloscope can not measure finer than 500 mV per division before the DC offset becomes too great.  Some measurements were recorded at 500 mV/div and 1 ms, 1 μs and 50 ms, using <code>single_device.py</code>, and saved on disk with timestamp and resolution in the filename.</li>
+<li>Some measurements of the system were taken with the input shorted, like in Figure <a href="#org6f42787">1</a>, to measure the noise of the amplifier (and the surroundings).  There a substantial (~8 V) DC voltage present, which hinders measurements.  The oscilloscope can not measure finer than 500 mV per division before the DC offset becomes too great.  Some measurements were recorded at 500 mV/div and 1 ms, 1 μs and 50 ms, using <code>single_device.py</code>, and saved on disk with timestamp and resolution in the filename.</li>
 
 <li>A solution to the DC problem was helpfully provided by the TAs: the channel on the oscilloscope was changed to AC coupling, as it was in DC coupling before.  The signal can now be measured at much greater voltage resolution.  The filenames of the previous data were updated to reflect that they were measured in DC mode.</li>
 
 <li><p>
-Some measurements were taken with the input shorted, in AC coupling mode.  Initially, a ~50 Hz signal dominated the output (Figure <a href="#org067eb1e">2</a>), presumed to be AC power grid interference, based on its frequency.
-After disconnecting and reconnecting the input short, this behaviour ceased (Figure <a href="#orgde1fffa">3</a>).
-The behaviour resumed when keeping the input disconnected (Figure <a href="#org75c04b2">4</a>).
+Some measurements were taken with the input shorted, in AC coupling mode.  Initially, a ~50 Hz signal dominated the output (Figure <a href="#org056d249">2</a>), presumed to be AC power grid interference, based on its frequency.
+After disconnecting and reconnecting the input short, this behaviour ceased (Figure <a href="#org1f36881">3</a>).
+The behaviour resumed when keeping the input disconnected (Figure <a href="#orgf8747e6">4</a>).
 This suggests it was a connection issue.
 </p>
 
 
-<figure id="org067eb1e">
+<figure id="org056d249">
 <img src="images/s2-160345-short-10mv-5ms-ac_v-t.png" alt="s2-160345-short-10mv-5ms-ac_v-t.png" width="70%">
 
-<figcaption><span class="figure-number">Figure 2: </span>\(V(t)\) measured with the input shorted, with resolution 10 mV / div., 5 ms / div.  The frequence of the large oscillations is approximately 50 Hz, suggestion it is interference from the AC power grid.</figcaption>
+<figcaption><span class="figure-number">Figure 2: </span>\(V(t)\) measured with the input shorted, with resolution 10 mV / div., 5 ms / div.  The frequency of the large oscillations is approximately 50 Hz, suggestion it is interference from the AC power grid.</figcaption>
 </figure>
 
 
-<figure id="orgde1fffa">
+<figure id="org1f36881">
 <img src="images/s2-162029-short-5mv-5ms-ac_v-t.png" alt="s2-162029-short-5mv-5ms-ac_v-t.png" width="70%">
 
 <figcaption><span class="figure-number">Figure 3: </span>\(V(t)\) measured with the input shorted, with resolution 10 mV / div., 5 ms / div.  The 50 Hz oscillations are gone, and remained gone with subsequent measurements.  \(V_{\mathrm{RMS}} ≈ 2.3\text{ mV}\).</figcaption>
 </figure>
 
 
-<figure id="org75c04b2">
+<figure id="orgf8747e6">
 <img src="images/s2-163356-void-5mv-5ms-ac_v-t.png" alt="s2-163356-void-5mv-5ms-ac_v-t.png" width="70%">
 
-<figcaption><span class="figure-number">Figure 4: </span>\(V(t)\) measured with the input disconnected, with resolution 10 mV / div., 5 ms / div.  The oscillations are again approximately 50 Hz, like Figure <a href="#org067eb1e">2</a>.  This persists with subsequente measurements.</figcaption>
+<figcaption><span class="figure-number">Figure 4: </span>\(V(t)\) measured with the input disconnected, with resolution 10 mV / div., 5 ms / div.  The oscillations are again approximately 50 Hz, like Figure <a href="#org056d249">2</a>.  This persists with subsequent measurements.</figcaption>
 </figure></li>
 
 <li>End of session.  Plan for next session:
@@ -370,11 +370,11 @@ This suggests it was a connection issue.
 </ul>
 </div>
 </div>
-<div id="outline-container-org66a0a3d" class="outline-2">
-<h2 id="org66a0a3d">Session 3</h2>
-<div class="outline-text-2" id="text-org66a0a3d">
+<div id="outline-container-org50cbcab" class="outline-2">
+<h2 id="org50cbcab">Session 3</h2>
+<div class="outline-text-2" id="text-org50cbcab">
 <p>
-Session 3, 26th of april 2024
+Session 3, 26th of April 2024
 </p>
 <ul class="org-ul">
 <li>The setup is connected and the signal is visually checked on the oscilloscope to check if everything is still connected properly.  Everything looks the same as last time.</li>
@@ -386,13 +386,13 @@ Session 3, 26th of april 2024
 Ten measurements have been taken with each setting.</dd>
 <dt>39 k&Omega;</dt><dd>The same settings and procedures are used.
 As a preliminary judgement, the noise looks no different than with 390 &Omega;.</dd>
-<dt>10 M&Omega;</dt><dd>The signal seems slightly noisier, judging by the \(V_{\mathrm{RMS}}\) readout, but the AC interference is now visible again (Figure <a href="#orgb0c8914">5</a>), though to a lesser degree than with the input disconnected.</dd>
+<dt>10 M&Omega;</dt><dd>The signal seems slightly noisier, judging by the \(V_{\mathrm{RMS}}\) readout, but the AC interference is now visible again (Figure <a href="#orgf3edd09">5</a>), though to a lesser degree than with the input disconnected.</dd>
 </dl></li>
 <li><p>
-The calculated \(V_{\mathrm{RMS}}\) are recorded in table <a href="#org79693fb">1</a>.
+The calculated \(V_{\mathrm{RMS}}\) are recorded in table <a href="#orgb921750">1</a>.
 </p>
-<figure id="org89bfaab">
-<table id="org79693fb">
+<figure id="org468257b">
+<table id="orgb921750">
 <caption class="t-above"><span class="table-number">Table 1:</span> The calculated \(V_{\mathrm{RMS}}\) for each resistor with both time resolutions.  The error is obtained by taking the standard deviation of the ten calculated values.</caption>
 
 <colgroup>
@@ -433,7 +433,7 @@ The calculated \(V_{\mathrm{RMS}}\) are recorded in table <a href="#org79693fb">
 </ul>
 
 
-<figure id="orgb0c8914">
+<figure id="orgf3edd09">
 <img src="images/s3-152841-10M-5mv-10ms-ac_v-t.png" alt="s3-152841-10M-5mv-10ms-ac_v-t.png" width="70%">
 
 <figcaption><span class="figure-number">Figure 5: </span>\(V(t)\) measured with a 10 MΩ resistor connected.  Like with the input disconnected, AC interference is visibly present.  The signal <i>is</i> distinct from a signal with no connection, so it is not likely a connection issue.</figcaption>
@@ -450,20 +450,20 @@ The calculated \(V_{\mathrm{RMS}}\) are recorded in table <a href="#org79693fb">
 </ul>
 </div>
 </div>
-<div id="outline-container-org08aa4d4" class="outline-2">
-<h2 id="org08aa4d4">Session 4</h2>
-<div class="outline-text-2" id="text-org08aa4d4">
+<div id="outline-container-orgfcff8c0" class="outline-2">
+<h2 id="orgfcff8c0">Session 4</h2>
+<div class="outline-text-2" id="text-orgfcff8c0">
 <p>
-Session 4, 30th of april 2024
+Session 4, 30th of April 2024
 </p>
 <ul class="org-ul">
 <li>The setup has been connected to a NI myDAQ with TOO interface.  The input, which was previously connected to the oscilloscope, is now connected to AI1.  The ground is now connected to AGND.</li>
 <li><p>
-The resistors are measured again using the myDAQ, controlled by Python.  The resistor will be measured for 100,000 samples with 100,000 samples per second, after which the standard deviation is used to determine the noise \(V_{\mathrm{RMS}}\).  This process is repeated ten times per resistor.  The obtained values for \(V_{\mathrm{RMS}}\) are averaged to obtain the final value, and the standard deviation is taken to see how an uncertainty due to fluctuation over time.  The results are shown in Table <a href="#org3209ab7">2</a>.  Like before, the 10 MΩ resistor shows AC interference, sown in Figure <a href="#org8870fa1">6</a>.
+The resistors are measured again using the myDAQ, controlled by Python.  The resistor will be measured for 100,000 samples with 100,000 samples per second, after which the standard deviation is used to determine the noise \(V_{\mathrm{RMS}}\).  This process is repeated ten times per resistor.  The obtained values for \(V_{\mathrm{RMS}}\) are averaged to obtain the final value, and the standard deviation is taken to see how an uncertainty due to fluctuation over time.  The results are shown in Table <a href="#org05fc0dc">2</a>.  Like before, the 10 MΩ resistor shows AC interference, shown in Figure <a href="#org35ad84e">6</a>.
 </p>
 
-<figure id="orgbd748c8">
-<table id="org3209ab7">
+<figure id="org00c51e1">
+<table id="org05fc0dc">
 <caption class="t-above"><span class="table-number">Table 2:</span> The \(V_{\mathrm{RMS}}\) of various resistors measured with the myDAQ.</caption>
 
 <colgroup>
@@ -507,17 +507,17 @@ The resistors are measured again using the myDAQ, controlled by Python.  The res
 </figure>
 
 
-<figure id="org8870fa1">
+<figure id="org35ad84e">
 <img src="images/mydaq_10M-t.png" alt="mydaq_10M-t.png" width="70%">
 
-<figcaption><span class="figure-number">Figure 6: </span>Strong AC intererence in a \(V(t)\) measurement of a 10 MΩ resistor taken with the myDAQ.</figcaption>
+<figcaption><span class="figure-number">Figure 6: </span>Strong AC interference in a \(V(t)\) measurement of a 10 MΩ resistor taken with the myDAQ.</figcaption>
 </figure></li>
 <li><p>
-While not visible, AC interference is strongly present with the lower resistances as well, see Figure <a href="#orge6a0349">7</a>.
+While not visible, AC interference is strongly present with the lower resistances as well, see Figure <a href="#org115791b">7</a>.
 </p>
 
 
-<figure id="orge6a0349">
+<figure id="org115791b">
 <img src="images/fft_390.png" alt="fft_390.png" width="70%">
 
 <figcaption><span class="figure-number">Figure 7: </span>Fourier transform of a \(V(t)\) measurement of a 390 Ω resistor.  A strong peak is visible at 50 Hz.</figcaption>
@@ -526,8 +526,8 @@ While not visible, AC interference is strongly present with the lower resistance
 In an attempt to determine whether using a high-pass filter is useful, some measurements where taken with the frequencies below 60 Hz digitally removed.
 </p>
 
-<figure id="org4629a61">
-<table id="orga9e4cc0">
+<figure id="orga4d2819">
+<table id="org4da7aed">
 
 
 <colgroup>
@@ -577,11 +577,11 @@ In an attempt to determine whether using a high-pass filter is useful, some meas
 </ul>
 </div>
 </div>
-<div id="outline-container-org46a1c25" class="outline-2">
-<h2 id="org46a1c25">Session 5</h2>
-<div class="outline-text-2" id="text-org46a1c25">
+<div id="outline-container-orgcf3fc10" class="outline-2">
+<h2 id="orgcf3fc10">Session 5</h2>
+<div class="outline-text-2" id="text-orgcf3fc10">
 <p>
-Session 4, 1st of march 2024
+Session 5, 1st of March 2024
 </p>
 <ul class="org-ul">
 <li><p>
@@ -589,25 +589,25 @@ To determine the transfer function of the system, the input is connected to the 
 </p>
 
 <p>
-By comparing the amplitude of the system output and the input at each frequency, the transfer function can be obtained, which is shown in Figure <a href="#orgae867a7">8</a>.  Figure <a href="#orgf26ff99">9</a> shows one the input and output of one of the measurements.  The output is much smaller than the input, which indicates something is wrong.  This phenomenon appeared in many of the measured signals.
+By comparing the amplitude of the system output and the input at each frequency, the transfer function can be obtained, which is shown in Figure <a href="#orge2cd54a">8</a>.  Figure <a href="#orgb00c553">9</a> shows one the input and output of one of the measurements.  The output is much smaller than the input, which indicates something is wrong.  This phenomenon appeared in many of the measured signals.
 </p>
 
 
-<figure id="orgae867a7">
+<figure id="orge2cd54a">
 <img src="images/s5-rubbish-transfer.svg" alt="s5-rubbish-transfer.svg" class="org-svg" width="70%">
 
 <figcaption><span class="figure-number">Figure 8: </span>The obtained transfer function.  The result is very noisy and not at all what is expected.</figcaption>
 </figure>
 
 
-<figure id="orgf26ff99">
+<figure id="orgb00c553">
 <img src="images/s5-rubbish-io-32.4_Hz.svg" alt="s5-rubbish-io-32.4_Hz.svg" class="org-svg" width="70%">
 
 <figcaption><span class="figure-number">Figure 9: </span>The input and output signals compared at ~32.4 Hz.  Note that the output signal had a substantial DC component, which is removed here.  The output is significantly smaller than the input, which is quite the opposite of the intended effect.</figcaption>
 </figure></li>
 
 <li><p>
-Another problem plaguing the characterisation of the gain is the delay between starting the writing of the signal and reading the output.  This is already visible in Figure <a href="#orgf26ff99">9</a>, as the first of the ten peaks is missing, and the end shows some signal where input has already ceased.  This is much more pronounced at higher frequencies.
+Another problem plaguing the characterisation of the gain is the delay between starting the writing of the signal and reading the output.  This is already visible in Figure <a href="#orgb00c553">9</a>, as the first of the ten peaks is missing, and the end shows some signal where input has already ceased.  This is much more pronounced at higher frequencies.
 </p>
 
 <p>
@@ -617,50 +617,50 @@ This is an issue that should be fixed in the code used for using the myDAQ.  A s
 <li>The system was connected to a function generator (Siglent SDG830) and oscilloscope to troubleshoot.  The results are similar to those before, tested at various amplitudes between 1 V and 10 mV, at frequencies in the kHz range.</li>
 
 <li><p>
-Helpful TA intervention revealed that I had neglected to ground the batteries.  The two 9 V batteries are connected in series.  The positive side applies a voltage to the JFET drain and the op amps' positive supply input.  The negative side connects to the op amps' negative supply input.  The circuit is grounded to the oscilloscope or myDAQ.  The batteries, however, were not grounded at all.  Now, the batteries are connected, through a point between the batteries, to the common ground.  See Figure <a href="#org6a35cce">10</a>.  This seems to resolve the issue.  One oscilloscope trace of the working system is shown in Figure <a href="#orgddfa69b">11</a>.
+Helpful TA intervention revealed that I had neglected to ground the batteries.  The two 9 V batteries are connected in series.  The positive side applies a voltage to the JFET drain and the op amps' positive supply input.  The negative side connects to the op amps' negative supply input.  The circuit is grounded to the oscilloscope or myDAQ.  The batteries, however, were not grounded at all.  Now, the batteries are connected, through a point between the batteries, to the common ground.  See Figure <a href="#org3a63f66">10</a>.  This seems to resolve the issue.  One oscilloscope trace of the working system is shown in Figure <a href="#org93c404b">11</a>.
 </p>
 
 
-<figure id="org6a35cce">
+<figure id="org3a63f66">
 <img src="images/20240501_173932_batteries_small.jpg" alt="20240501_173932_batteries_small.jpg" width="50%">
 
 <figcaption><span class="figure-number">Figure 10: </span>The batteries connected properly.  The left and right cables connect to -9 V and +9 V on the breadboard respectively.  The central cable connects to the common ground.  This ground connection was missing earlier.</figcaption>
 </figure>
 
 
-<figure id="orgddfa69b">
+<figure id="org93c404b">
 <img src="images/s5-good-io-oscilloscope.svg" alt="s5-good-io-oscilloscope.svg" class="org-svg" width="70%">
 
-<figcaption><span class="figure-number">Figure 11: </span>An oscilloscope trace of the input and output signal of the fixed system, driven using frequency 1 kHZ, amplitude 4 mV with the function generator.  Note the different scales: the input signal has an amplitude of around 4 mV, as set on the function generator, but the output has an amplitude of approximately 10 V.</figcaption>
+<figcaption><span class="figure-number">Figure 11: </span>An oscilloscope trace of the input and output signal of the fixed system, driven using frequency 1 kHz, amplitude 4 mV with the function generator.  Note the different scales: the input signal has an amplitude of around 4 mV, as set on the function generator, but the output has an amplitude of approximately 10 V.</figcaption>
 </figure></li>
 
-<li>The connection of the battery to the ground is very sensitive.  It often seems to not connect properly, giving a very noise, useless signal.  Reconnecting or slightly bending the input until it works again fixes the issue.  At one point, the gain notably increased, cliping the output signal.  This could not be reproduced.</li>
+<li>The connection of the battery to the ground is very sensitive.  It often seems to not connect properly, giving a very noise, useless signal.  Reconnecting or slightly bending the input until it works again fixes the issue.  At one point, the gain notably increased, clipping the output signal.  This could not be reproduced.</li>
 
 <li>The setup is moved over on the desk, as to make more efficient use of the space available.  This required disconnecting and reconnecting parts of the setup.  The setup has been connected to the oscilloscope to verify that it is connected properly.  After fiddling a bit with the battery ground connector and the +9 V jumper cable, the setup works again.  Interestingly, the gain seems to have increased.  A 4 mV, 1 kHz sine like before now produces a heavily malformed output.  Increasing or decreasing the frequency enough to end up in the lower gain region leads to a clean sine output again.</li>
 
 <li><p>
-The signal generator only goes down to 4 mV, but the myDAQ can go lower.  At 1 mV, 1 kHz, the myDAQ can measure a recognisable signal, shown in Figure <a href="#org4cd01b3">12</a>.  Figure <a href="#org9ee66b5">13</a> shows the FFT of the signal, showing a clearly identifiable peak at he right frequency.
+The signal generator only goes down to 4 mV, but the myDAQ can go lower.  At 1 mV, 1 kHz, the myDAQ can measure a recognisable signal, shown in Figure <a href="#orgd490cc6">12</a>.  Figure <a href="#orgac2fa54">13</a> shows the FFT of the output signal, showing a clearly identifiable peak at he right frequency.
 </p>
 
 
-<figure id="org4cd01b3">
+<figure id="orgd490cc6">
 <img src="images/s5-powered-mydaq-1kHz-1mV.svg" alt="s5-powered-mydaq-1kHz-1mV.svg" class="org-svg" width="70%">
 
 <figcaption><span class="figure-number">Figure 12: </span>Input and output signals measured with the myDAQ of the system driven by a 1 kHz, 1 mV signal from the myDAQ.  The signals look messy and not quite centred at 0 V, but are still recognisable.</figcaption>
 </figure>
 
 
-<figure id="org9ee66b5">
+<figure id="orgac2fa54">
 <img src="images/s5-powered-mydaq-1kHz-1mV-fft.svg" alt="s5-powered-mydaq-1kHz-1mV-fft.svg" class="org-svg" width="70%">
 
-<figcaption><span class="figure-number">Figure 13: </span>The FFT of the signal show in Figure <a href="#org4cd01b3">12</a>.  A clear peak is visible at 1000 Hz, which is the frequency with which the system is driven.</figcaption>
+<figcaption><span class="figure-number">Figure 13: </span>The FFT of the output signal shown in Figure <a href="#orgd490cc6">12</a>.  A clear peak is visible at 1000 Hz, which is the frequency with which the system is driven.</figcaption>
 </figure></li>
 </ul>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2024-05-03 Fri 11:33</p>
+<p class="date">Created: 2024-05-03 Fri 11:37</p>
 </div>
 </body>
 </html>
