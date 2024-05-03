@@ -169,7 +169,12 @@ Session 4, 1st of march 2024
 
 - The system was connected to a function generator (Siglent SDG830) and oscilloscope to troubleshoot.  The results are similar to those before, tested at various amplitudes between 1 V and 10 mV, at frequencies in the kHz range.
 
-- Helpful TA intervention revealed that I had neglected to ground the batteries.  The two 9 V batteries are connected in series.  The positive side applies a voltage to the JFET drain and the op amps' positive supply input.  The negative side connects to the op amps' negative supply input.  The circuit is grounded to the oscilloscope or myDAQ.  The batteries, however, were not grounded at all.  Now, the batteries are connected, through a point between the batteries, to the common ground.  This seems to resolve the issue.  One oscilloscope trace of the working system is shown in Figure [[fig:s5-good-io-oscilloscope]].
+- Helpful TA intervention revealed that I had neglected to ground the batteries.  The two 9 V batteries are connected in series.  The positive side applies a voltage to the JFET drain and the op amps' positive supply input.  The negative side connects to the op amps' negative supply input.  The circuit is grounded to the oscilloscope or myDAQ.  The batteries, however, were not grounded at all.  Now, the batteries are connected, through a point between the batteries, to the common ground.  See Figure [[fig:s5-batteries]].  This seems to resolve the issue.  One oscilloscope trace of the working system is shown in Figure [[fig:s5-good-io-oscilloscope]].
+
+  #+NAME: fig:s5-batteries
+  #+ATTR_HTML: :width 50%
+  #+CAPTION: The batteries connected properly.  The left and right cables connect to -9 V and +9 V on the breadboard respectively.  The central cable connects to the common ground.  This ground connection was missing earlier.
+  [[file:images/20240501_173932_batteries_small.jpg]]
 
   #+NAME: fig:s5-good-io-oscilloscope
   #+ATTR_HTML: :width 70%
