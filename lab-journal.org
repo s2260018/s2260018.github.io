@@ -196,3 +196,28 @@ Session 5, 1st of March 2024
   #+CAPTION: The FFT of the output signal shown in Figure [[fig:s5-good-io-mydaq]].  A clear peak is visible at 1000 Hz, which is the frequency with which the system is driven.
   #+ATTR_HTML: :width 70%
   [[file:images/s5-powered-mydaq-1kHz-1mV-fft.svg]]
+* Session 6
+Session 6, 3rd of March 2024
+- The system was quickly tested to verify that it still works.  It does.
+- Some attempts were made to measure a transfer function by writing sinusoidal signals of various frequencies and reading the input and output signals.  Both writing and reading are done with the myDAQ.  This did not work out well, as the myDAQ does not support a trigger, so reading the entire output signal proved difficult.
+- A /lot/ of time has been spent on modifying the python code used to read and write with the myDAQ.  There were some mistakes in the code, which was written without the ability to test it beforehand, which took some time to fix.  This debugging is mostly not written down, as that would be most tedious and not very productive, but this makes the journal for this session look very sparse.
+- Because the myDAQ does not support triggers, there is a delay between starting the reading and writing.  I settled on writing a zero padding of half a second before and after the signal.  The signal consists of an integer amount of sine periods: 10 or however many almost fit in 1 second, whichever is greater.  The minimum time of 1 second is chosen so that the noise in the zero-padding does not dominate the signal.  The input signal has an amplitude of only 1 mV, as to avoid saturating the op amps, so background noise and interference is rather significant.
+- Now that the method seems to work, as indicated by a few test signals, a large transfer function measurement was started: 1 Hz to 100 kHz, 20 measurements per octave, amplitude +1 mV[fn:1], sample rate 200,000 Hz (the highest the myDAQ is capable of).
+- For later analysis, the results of each sine of the transfer function measurement is saved to disk.  This is a lot of data and takes very long to write using =numpy.savetxt=.  =numpy.save= is significantly faster.  To get the measurement done faster, the decision was made to save all the data in memory, and write to disk when all measuring was done.  With the large measurement, this led to a catastrophic out-of-memory situation, which a forced reboot as only solution.  This was a tedious ordeal which wasted even more time.
+- The code is fixed.  Because time is running out, only a small measurement with identical settings, but 2 frequencies per octave was performed.  The result is shown in Figure [[fig:s6-transfer]].
+
+  #+NAME: fig:s6-transfer
+  #+ATTR_HTML: :width 70%
+  #+CAPTION: A transfer function of the system measured with sine waves from 1 Hz to 100 kHz, 2 frequencies per octave, amplitude 1 mV, sample rate 200 kHz.  The strange concave plateau suggests that something is amiss.
+  [[file:images/s6-transfer.svg]]
+
+- It turns out that the output is still clipped at large gains, see Figure [[fig:s6-clipped-io]].  This is because I accidentally used 10 mV instead of the intended 1 mV.  4 mV was already known to be too much, so clipping at 10 mV is no surprise.
+
+  #+NAME: fig:s6-clipped-io
+  #+ATTR_HTML: :width 70%
+  #+CAPTION: Input and output signal at ~1.33 kHz.  The output signal is clipped, which explains the behaviour in Figure [[fig:s6-transfer]].  It also reveals that the output was set to 10 mV, not 1 mV, which is a mistake.
+  [[file:images/s6-clipped_io-1.33_kHz.svg]]
+
+* Footnotes
+
+[fn:1]Actually 10 mV, by accident, which is discovered later.
