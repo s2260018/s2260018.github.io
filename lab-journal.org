@@ -217,6 +217,101 @@ Session 6, 3rd of March 2024
   #+ATTR_HTML: :width 70%
   #+CAPTION: Input and output signal at ~1.33 kHz.  The output signal is clipped, which explains the behaviour in Figure [[fig:s6-transfer]].  It also reveals that the output was set to 10 mV, not 1 mV, which is a mistake.
   [[file:images/s6-clipped_io-1.33_kHz.svg]]
+* Session 7
+Session 6, 7th of March 2024
+- The setup was connected and its functionality verified by a quick test signal.  All seems well.
+- There appears to be still be some clipping at 1 mV amplitude, see Figure [[fig:s7-1mV-clipping]].  An amplitude of 0.5 mV seems sufficiently small, see Figure [[fig:s7-0.5mV-no-clipping]].
+
+  #+NAME: fig:s7-1mV-clipping
+  #+ATTR_HTML: :width 70%
+  #+CAPTION: Input and output signal at 1 kHz, amplitude 1 mV.  The output signal is still somewhat clipped.
+  [[file:images/s7-1mV-clipping.svg]]
+
+  #+NAME: fig:s7-0.5mV-no-clipping
+  #+ATTR_HTML: :width 70%
+  #+CAPTION: Input and output signal at 1 kHz, amplitude 0.5 mV.  The output signal is no longer clipped.
+  [[file:images/s7-0.5mV-no-clipping.svg]]
+- Another attempt was made to measure the transfer function.  This resulted in some nonsensical results, but before the issue could be diagnosed, the computer froze again, despite measures to reduce memory usage.  This, combined with the TOO computer's lack of persistence, made for a very frustrating and annoying waste of time.
+
+- At such a low amplitude as 0.5 mV, there is often hardly a distinguishable signal.  A possible solution is an HDR approach: the transfer function is measured with multiple amplitudes, and the results are combined to make a single transfer function valid in both high and low gain regions.  This is, however, rather time consuming.
+
+- The transfer function is measured with 0.5 mV, 1 Hz to 100 kHz, sample rate 200 kHz, 20 frequencies per octave.  The result is useless.
+
+- In order to reduce the noise, the system can be isolated from interference and background noise by wrapping it in aluminium foil.
+
+- Before applying the insulation, the noise is measured with the input shorted.  Multiple 10 second, 200 kHz sampling measurements were taken.  The $V_{\mathrm{RMS}}$ varies over time, but remains at about 35 mV.
+
+- The exposed conducting ends of the connectors are loosely wrapped in plastic foil to prevent contact with the conductive aluminium foil.  The $V_{\mathrm{RMS}}$ now is around 40 mV.  This may be a consequence of the foil, or the background may have changed.
+
+- The cables have been moved around to make the setup more compact, to fit it in the aluminium foil.  This caused the signal to blow up.  By connecting the output and ground the the oscilloscope and fiddling the the system until it worked again, the problem seems to have been resolved.  The issue mostly seems to have been the jumper cable shorting the input.
+
+- While connected to the oscilloscope to monitor the system, the breadboard, batteries, myDAQ and cables are wrapped in aluminium foil.  The output signal on the oscilloscope has not changed much, so there is probably no short, but the $V_{\mathrm{RMS}}$ readout seems to have decreased somewhat.  The oscilloscope shows a ~8 MHz signal, which is still present.
+
+- The noise $V_{\mathrm{RMS}}$ is now approximately 36 mV.  This is slightly worse than without insulation, but it does seem slightly more consistent over time.
+
+- The noise is measured for 200,000 samples with sample rate 200 kHz.  This is repeated 10 times.  For the shorted input, this gives 34.15 \pm 0.05 mV.
+
+- The same process three minutes later, without touching the setup, gives 33.9 \pm 0.1 mV.  The result is still very variant over long times, probably still as a consequence of outside interference.
+
+- The same process in repeated for various resistors.  The results are recorded in Table [[tab:s7-resistor-noise]].
+
+  #+begin_figure
+  #+NAME: tab:s7-resistor-noise
+  #+CAPTION: The noise for various resistors.  These measurements are obtained by measuring each resistor for 200,000 samples with sample rate 200 kHz, repeated ten times.  The mean is the resulting $V_{\mathrm{RMS}}$, and the standard deviation is $\sigma_{V_{\mathrm{RMS}}}$.  The measurements are repeated multiple times per resistor, because the background changes over time and this gives a better indication of the real uncertainty.
+  |     time | $R$ (\Omega) | $V_{\mathrm{RMS}}$ (mV) | $\sigma_{V_{\mathrm{RMS}}}$ (mV) |
+  |----------+--------------+-------------------------+----------------------------------|
+  | 11:09:32 | 390          |                    35.3 |                              0.4 |
+  | 11:13:18 | 390          |                    34.5 |                              0.3 |
+  | 11:16:54 | 390          |                   34.99 |                             0.08 |
+  | 11:18:54 | 39k          |                   155.7 |                              0.9 |
+  | 11:19:42 | 39k          |                   156.2 |                              0.7 |
+  | 11:20:26 | 39k          |                     156 |                                2 |
+  | 11:21:03 | 39k          |                   155.2 |                              0.5 |
+  | 11:26:49 | 100k         |                     369 |                                1 |
+  | 11:27:21 | 100k         |                   366.0 |                              0.7 |
+  | 11:27:55 | 100k         |                     363 |                                1 |
+  | 11:28:28 | 100k         |                     366 |                                1 |
+  | 11:29:24 | 100k         |                     364 |                                1 |
+  | 11:31:04 | 200k         |                     632 |                               14 |
+  | 11:31:43 | 200k         |                     631 |                                5 |
+  | 11:32:16 | 200k         |                     622 |                                2 |
+  | 11:32:44 | 200k         |                     624 |                               12 |
+  | 11:33:28 | 200k         |                     622 |                                2 |
+  | 11:33:53 | 200k         |                     626 |                                3 |
+  | 11:35:54 | 500k         |                    5322 |                                2 |
+  | 11:36:54 | 500k         |                    5320 |                                1 |
+  | 11:37:09 | 500k         |                    5320 |                                2 |
+  | 11:37:44 | 500k         |                    5317 |                                1 |
+  | 11:38:28 | 500k         |                    5308 |                                4 |
+  | 11:38:51 | 500k         |                    5309 |                                2 |
+  | 11:39:18 | 500k         |                    5317 |                                2 |
+  | 11:41:43 | 1M           |                    5536 |                                1 |
+  | 11:42:09 | 1M           |                    5533 |                                1 |
+  | 11:42:31 | 1M           |                  5534.0 |                              0.8 |
+  | 11:43:09 | 1M           |                  5531.3 |                              0.9 |
+  | 11:43:50 | 1M           |                    5531 |                                1 |
+  #+end_figure
+
+- The noise does noticeably increase with resistance, but there is still a 50 Hz signal present.
+
+- Because the table frame may act as an antenna, the setup has been moved to the top of a cardboard box on a chair.  Quick analysis with the oscilloscope, with the input of the amplifier shorted, shows no recognisable 50 Hz signal.  There MHz signal is still present, but this time at ~7.1 MHz.
+
+- Though the oscilloscope shows no recognisable 50 Hz signal (Figure [[fig:s7-no-50Hz]]), the myDAQ shows a very clear 50 Hz signal (Figure [[fig:s7-foil-box-short-interference]]).  The oscilloscope does show a ~7.5 MHz signal (Figure [[fig:s7-7.5MHz]]), which the myDAQ cannot measure due to its slower sample rate.
+
+#+NAME: fig:s7-foil-box-short-interference
+#+ATTR_HTML: :width 70%
+#+CAPTION: Signal measured with the myDAQ, measured with sample rate 200 kHz, with the amplifier input shorted, with the setup wrapped in aluminium foil and situated on a box on the chair.  A clear 50 Hz signal is visible.
+[[file:images/s7-foil-box-short-interference.svg]]
+
+#+NAME: fig:s7-no-50Hz
+#+ATTR_HTML: :width 70%
+#+CAPTION: Signal measured with the oscilloscope of the box-situated, insulated setup.  There is no 50 Hz signal visible, which would have five periods in this 120 ms interval.
+[[file:images/s7-no-50Hz_v-t.svg]]
+
+#+NAME: fig:s7-7.5MHz
+#+ATTR_HTML: :width 70%
+#+CAPTION: Signal measured with the oscilloscope of the box-situated, insulated setup.  There is an approximately 7.5 MHz signal present.  This signal cannot be directly measured with the myDAQ, which has a maximum sample rate of only 200 kHz.
+[[file:images/s7-7.5MHz_v-t.svg]]
 
 * Footnotes
 
