@@ -77,7 +77,7 @@ Session 2, 24th of April 2024
 Session 3, 26th of April 2024
 - The setup is connected and the signal is visually checked on the oscilloscope to check if everything is still connected properly.  Everything looks the same as last time.
 - Some more data with the input shorted was recorded, with 10 ms / div. and 500 μs / div.
-- Four measurements with 10 ms / div. and four with 500 μs / div. give respectively $V_{RMS} \approx 1.29\ \pm\ 0.07\ \text{mV}$ and $V_{RMS} \approx 1.52\ \pm\ 0.12\ \text{mV}$.  The error is the standard deviation.
+- Four measurements with 10 ms / div. and four with 500 μs / div. give respectively $V_{\mathrm{RMS}} \approx 1.29\ \pm\ 0.07\ \text{mV}$ and $V_{\mathrm{RMS}} \approx 1.52\ \pm\ 0.12\ \text{mV}$.  The error is the standard deviation.
 - Several different resistors I have on hand are put under test, and several oscilloscope traces will be recorded for each, with the smallest voltage per division allowed without frequent clipping, and with both 10 ms and 500 us time settings.
   - 390 \Omega :: 5 mV / div. can be used without clipping most of the time.
     Ten measurements have been taken with each setting.
@@ -89,7 +89,7 @@ Session 3, 26th of April 2024
   #+begin_figure
   #+NAME: tab:s3-resistor-noise
   #+CAPTION: The calculated $V_{\mathrm{RMS}}$ for each resistor with both time resolutions.  The error is obtained by taking the standard deviation of the ten calculated values.
-  | $R\text{ Ω}$ | $V_{\mathrm{RMS}}\ (\text{mV, }10\text{ ms})$ | $V_{\mathrm{RMS}}\ (\text{mV, }500\text{μs})$ |
+  | $R\text{ (Ω)}$ | $V_{\mathrm{RMS}}\ (\text{mV, }10\text{ ms})$ | $V_{\mathrm{RMS}}\ (\text{mV, }500\text{μs})$ |
   |--------------+-----------------------------------------------+-----------------------------------------------|
   | 390          | 1.37 ± 0.16                                   | 1.41 ± 0.12                                   |
   | 39 k         | 1.28 ± 0.08                                   | 1.37 ± 0.10                                   |
