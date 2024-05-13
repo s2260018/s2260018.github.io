@@ -218,7 +218,7 @@ Session 6, 3rd of March 2024
   #+CAPTION: Input and output signal at ~1.33 kHz.  The output signal is clipped, which explains the behaviour in Figure [[fig:s6-transfer]].  It also reveals that the output was set to 10 mV, not 1 mV, which is a mistake.
   [[file:images/s6-clipped_io-1.33_kHz.svg]]
 * Session 7
-Session 6, 7th of March 2024
+Session 7, 7th of March 2024
 - The setup was connected and its functionality verified by a quick test signal.  All seems well.
 - There appears to be still be some clipping at 1 mV amplitude, see Figure [[fig:s7-1mV-clipping]].  An amplitude of 0.5 mV seems sufficiently small, see Figure [[fig:s7-0.5mV-no-clipping]].
 
@@ -249,7 +249,7 @@ Session 6, 7th of March 2024
 
 - The noise $V_{\mathrm{RMS}}$ is now approximately 36 mV.  This is slightly worse than without insulation, but it does seem slightly more consistent over time.
 
-- The noise is measured for 200,000 samples with sample rate 200 kHz.  This is repeated 10 times.  For the shorted input, this gives 34.15 \pm 0.05 mV.
+- <<tgt:noise-procedure>>The noise is measured for 200,000 samples with sample rate 200 kHz.  This is repeated 10 times.  For the shorted input, this gives 34.15 \pm 0.05 mV.
 
 - The same process three minutes later, without touching the setup, gives 33.9 \pm 0.1 mV.  The result is still very variant over long times, probably still as a consequence of outside interference.
 
@@ -312,6 +312,65 @@ Session 6, 7th of March 2024
 #+ATTR_HTML: :width 70%
 #+CAPTION: Signal measured with the oscilloscope of the box-situated, insulated setup.  There is an approximately 7.5 MHz signal present.  This signal cannot be directly measured with the myDAQ, which has a maximum sample rate of only 200 kHz.
 [[file:images/s7-7.5MHz_v-t.svg]]
+* Session 8
+Session 8, 8th of March 2024
+- The setup was connected to the oscilloscope, and no 50 Hz interference was seen.  The setup was then connected to the myDAQ.  It initially showed relatively little 50 Hz interference, but it soon rose to the original level.
+- After unplugging and replugging the ground connection to the myDAQ's AGND, the 50 Hz component seems to be reduced to no higher than surrounding components.  Unplugging the ground seems to have no substantial result, but neither does replugging it.  Instead of investigating this further now, I will take advantage of this effect and do some measurements.
+- A coarse sample transfer function around a small region produces a much nicer result than before, see Figure [[fig:s8-small-transfer]].
+  
+  #+NAME: fig:s8-small-transfer
+  #+CAPTION: The transfer function of the circuit measured from 10 Hz to 10 kHz, amplitude 0.5 mV, 1 frequency per octave.  It looks much better than the transfer function obtained before.
+  #+ATTR_HTML: :width 70%
+  [[file:images/s8-small-transfer.svg]]
+  
+- Following this promising result, a larger, finer transfer function measurement is started, from 1 Hz to 100 kHz, 0.5 mV amplitude, 10 frequencies per octave.  The result is shown in Figure [[fig:s8-transfer-large]].  It looks mostly smooth and has a reasonable shape and amplitude.  There are two interesting features: there are five points with significantly greater amplitude than their neighbours, which may just be outliers, and there is a strange second, narrow maximum near the upper cut-off.
+
+  #+NAME: fig:s8-transfer-large
+  #+CAPTION: The transfer function of the circuit measured from 1 Hz to 100 kHz, amplitude 0.5 mV, 10 frequencies per octave.  It has about the right shape and order of magnitude, and looks smooth, except for the occasional outlier.
+  #+ATTR_HTML: :width 70%
+  [[file:images/s8-transfer-large.svg]]
+
+- To investigate the five outliers, another transfer function is measured with the same parameters.  The result is shown in Figure [[fig:s8-transfer-large-2]].  It looks largely the same as before, but with more outliers, at different positions.  The two transfer functions are compared in Figure [[fig:s8-transfer-overlay]].
+
+  #+NAME: fig:s8-transfer-large-2
+  #+CAPTION: The transfer function of the circuit measured a second time from 1 Hz to 100 kHz, amplitude 0.5 mV, 10 frequencies per octave.  It is very similar to the first, but with more outliers.
+  #+ATTR_HTML: :width 70%
+  [[file:images/s8-transfer-large-2.svg]]
+
+  #+NAME: fig:s8-transfer-overlay
+  #+CAPTION: Transfer functions of Figures [[fig:s8-transfer-large]] and [[fig:s8-transfer-large-2]] overlaid.  While they are similar in the ends and in overall shape, the high gain plateau is noticeably different in amplitude and fine detail.
+  #+ATTR_HTML: :width 70%
+  [[file:images/s8-transfer-overlay.svg]]
+
+- Because the 50 Hz interference is gone, and I'd really like some usable data, $V_{\mathrm{RMS}}$ is measured the same way as [[tgt:noise-procedure][last session]].  The results are recorded in Table [[tab:s8-resistor-noise]].
+
+  #+HTML: <figure>
+  #+NAME: tab:s8-resistor-noise
+  #+CAPTION: The noise for various resistors, obtained the same way as Table [[tab:s7-resistor-noise]].  There seems to be no significant difference between the resistors.
+  |     time | $R$ (\Omega) | $V_{\mathrm{RMS}}$ (V) | $\sigma_{V_{\mathrm{RMS}}}$ (V) |
+  |----------+--------------+------------------------+---------------------------------|
+  | 14:39:08 |            0 |                   0.21 |                            0.02 |
+  | 14:40:07 |            0 |                  0.168 |                           0.008 |
+  | 14:40:56 |            0 |                   0.18 |                            0.02 |
+  | 14:41:25 |            0 |                   0.19 |                            0.02 |
+  | 14:41:50 |            0 |                   0.18 |                            0.02 |
+  | 14:43:15 |          390 |                   0.13 |                            0.01 |
+  | 14:44:11 |          390 |                   0.14 |                            0.01 |
+  | 14:44:46 |          390 |                  0.137 |                           0.008 |
+  | 14:45:26 |          390 |                  0.121 |                           0.007 |
+  | 14:45:54 |          390 |                  0.118 |                           0.007 |
+  | 14:47:18 |          39k |                    0.3 |                             0.2 |
+  | 14:48:05 |          39k |                   0.18 |                            0.01 |
+  | 14:48:32 |          39k |                   0.17 |                            0.01 |
+  | 14:49:07 |          39k |                   0.17 |                            0.01 |
+  | 14:49:47 |          39k |                   0.18 |                            0.02 |
+  #+HTML: </figure>
+
+- The system is connected to the oscilloscope to diagnose the issue.  The presence of 50 Hz interference is very inconsistent.  When in appeared before, the $V_{\mathrm{RMS}}$ between resistors differed significantly and consistently.  Now it does not, there is no significant difference.  Before, the interference seemed only present when connected to the myDAQ.  Now, it still is no very visible in the time domain, but it occasionally shows up in the frequency domain.  Looking at both the $V_{\mathrm{RMS}}$ readout and the FFT on the oscilloscope, it doesn't seem to make much difference whether the system is connected to the myDAQ AGND or oscilloscope, or not at all.  What does make a difference, is connecting the ground to the aluminium foil.  If a 50 Hz peak was present, it vanishes quickly, and the floor of surrounding frequencies diminish as well.  $V_{\mathrm{RMS}}$ does not really change at all.  Care has been taken to ensure no exposed conductors contact the foil, and indeed, lifting all the connectors up to ensure there really is no connection does not change matters.  Time is running out, however, and there is not enough time left to investigate this issue or its consequences.
+
+- The setup is disconnected, dismantled and the parts are returned to whence they came.
+
+
 
 * Footnotes
 
